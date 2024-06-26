@@ -13,6 +13,8 @@ fun main() {
     }
 }
 
+//The transpose function takes a 2D array matrix as input and 
+//returns a new 2D array that is the transpose of the original matrix.
 fun transpose(matrix: Array<IntArray>): Array<IntArray> {
 
     //For transpose Matrix it means
@@ -27,15 +29,21 @@ fun transpose(matrix: Array<IntArray>): Array<IntArray> {
     //Take an empty array
     var transposeMatrix :Array<IntArray> = arrayOf()
 
+    //Loops through each column of the original matrix. 
+    //eg. for column(0),--> column(n=its size)
     for (col in  0 until matrix[0].size) {
 //        println("col  $col")
         var  newRow = intArrayOf()
 
+         //Loops through each column of the original matrix. 
+    //eg. for row(0),--> row(n=its size)
         for (row in matrix.indices) {
 //            println("col $col <-> row  $row")
+            //getting new arrays values as we traversing from (col,row) (0,0) to (col,row)(n,m) n=col.size, m=row.size
             newRow += matrix[row][col]
 //            println("newRow  ${newRow.contentToString()}")
         }
+        //getting the new arrays values in transposeMatrix
         transposeMatrix += newRow
     }
 
